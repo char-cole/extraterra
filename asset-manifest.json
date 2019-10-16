@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/extraterra/static/css/main.34de6062.chunk.css",
+    "main.js": "/extraterra/static/js/main.9f1e9c7a.chunk.js",
+    "main.js.map": "/extraterra/static/js/main.9f1e9c7a.chunk.js.map",
+    "runtime-main.js": "/extraterra/static/js/runtime-main.7ab41cb7.js",
+    "runtime-main.js.map": "/extraterra/static/js/runtime-main.7ab41cb7.js.map",
+    "static/js/2.389b81a0.chunk.js": "/extraterra/static/js/2.389b81a0.chunk.js",
+    "static/js/2.389b81a0.chunk.js.map": "/extraterra/static/js/2.389b81a0.chunk.js.map",
+    "index.html": "/extraterra/index.html",
+    "precache-manifest.40ac195e74d2d0afa2333cb1454d572e.js": "/extraterra/precache-manifest.40ac195e74d2d0afa2333cb1454d572e.js",
+    "service-worker.js": "/extraterra/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/extraterra/static/css/main.34de6062.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7ab41cb7.js",
+    "static/js/2.389b81a0.chunk.js",
+    "static/css/main.34de6062.chunk.css",
+    "static/js/main.9f1e9c7a.chunk.js"
+  ]
+}
