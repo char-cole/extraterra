@@ -2,10 +2,12 @@
   "name": "things-in-space-new",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://char-cole.github.io/extraterra",
   "dependencies": {
     "@vx/geo": "0.0.192",
     "d3": "^5.12.0",
     "d3-geo-projection": "^2.7.0",
+    "gh-pages": "^2.1.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-redux": "^7.1.1",
@@ -18,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
