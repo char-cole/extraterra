@@ -15,6 +15,10 @@ class WorldMap extends Component {
 
   render() {
     const { current, selectedProjection, worldData, loadCurrent } = this.props
+    const currentProjection = renderProjection(
+      selectedProjection.geo,
+      current.longLat
+    )
     return (
       <div onClick={() => loadCurrent()}>
         <svg width={800} height={450} viewBox='0 0 800 450'>
@@ -22,9 +26,7 @@ class WorldMap extends Component {
             {worldData.map((d, i) => (
               <path
                 key={`path-${i}`}
-                d={geoPath().projection(
-                  renderProjection(selectedProjection.geo, current.longLat)
-                )(d)}
+                d={geoPath().projection(currentProjection)(d)}
                 className='country'
                 fill={`rgba(38,250,56,${(1 / worldData.length) * i + 0.1})`}
                 stroke='#FFFFFF'

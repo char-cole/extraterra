@@ -8,11 +8,11 @@ import {
 import { geoHill } from 'd3-geo-projection'
 
 export const renderProjection = (projection, longLat) => {
-  const findRotationCoords = r => {
-    if (r[0]) {
-      if (r[0] < -45) return [90, 0]
-      if (r[0] > 45 && r[0] < 135) return [-90, 0]
-      if (r[0] >= 135) return [-180, 0]
+  const findRotationCoords = x => {
+    if (x) {
+      if (x < -45) return [90, 0]
+      if (x > 45 && x < 135) return [-90, 0]
+      if (x >= 135) return [-180, 0]
     }
     return [0, 0]
   }
@@ -21,7 +21,7 @@ export const renderProjection = (projection, longLat) => {
       return geoOrthographic()
         .scale(200)
         .translate([800 / 2, 450 / 2])
-        .rotate(findRotationCoords(longLat || [0, 0]))
+        .rotate(findRotationCoords(longLat[0] || 0))
     }
     case 'geoNaturalEarth1': {
       return geoNaturalEarth1()
