@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/extraterra/static/css/main.34de6062.chunk.css",
-    "main.js": "/extraterra/static/js/main.63bcc684.chunk.js",
-    "main.js.map": "/extraterra/static/js/main.63bcc684.chunk.js.map",
-    "runtime-main.js": "/extraterra/static/js/runtime-main.7ab41cb7.js",
-    "runtime-main.js.map": "/extraterra/static/js/runtime-main.7ab41cb7.js.map",
-    "static/js/2.fd9fa6cc.chunk.js": "/extraterra/static/js/2.fd9fa6cc.chunk.js",
-    "static/js/2.fd9fa6cc.chunk.js.map": "/extraterra/static/js/2.fd9fa6cc.chunk.js.map",
-    "index.html": "/extraterra/index.html",
-    "precache-manifest.c6ecbc4263b609f1c227107bd1d5d8f3.js": "/extraterra/precache-manifest.c6ecbc4263b609f1c227107bd1d5d8f3.js",
-    "service-worker.js": "/extraterra/service-worker.js",
-    "static/css/main.34de6062.chunk.css.map": "/extraterra/static/css/main.34de6062.chunk.css.map"
+    "main.css": "/static/css/main.34de6062.chunk.css",
+    "main.js": "/static/js/main.e526e99d.chunk.js",
+    "main.js.map": "/static/js/main.e526e99d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ca228c1a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ca228c1a.js.map",
+    "static/js/2.fd9fa6cc.chunk.js": "/static/js/2.fd9fa6cc.chunk.js",
+    "static/js/2.fd9fa6cc.chunk.js.map": "/static/js/2.fd9fa6cc.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.3395c01018b314cb58eb5bba088d032d.js": "/precache-manifest.3395c01018b314cb58eb5bba088d032d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/static/css/main.34de6062.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.7ab41cb7.js",
+    "static/js/runtime-main.ca228c1a.js",
     "static/js/2.fd9fa6cc.chunk.js",
     "static/css/main.34de6062.chunk.css",
-    "static/js/main.63bcc684.chunk.js"
+    "static/js/main.e526e99d.chunk.js"
   ]
 }
