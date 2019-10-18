@@ -4,21 +4,24 @@ import { changeProjection } from '../redux/actions'
 
 const ChangeProjectionButtons = props => {
   const buttonDivs = props.allProjections.map((x, i) => {
-    if (x.geo !== props.selectedProjection.geo) {
-      return (
-        <button
-          key={i}
-          onClick={() => {
-            return props.changeProjection(x)
-          }}
-        >
-          {x.name} Projection
-        </button>
-      )
-    } else return null
+    return (
+      <option key={i} value={x.geo + ',' + x.name}>
+        {x.name} Projection
+      </option>
+    )
   })
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>{buttonDivs}</div>
+    <select
+      onChange={event => {
+        const valueArray = event.target.value.split(',')
+        return props.changeProjection({
+          geo: valueArray[0],
+          name: valueArray[1]
+        })
+      }}
+    >
+      {buttonDivs}
+    </select>
   )
 }
 

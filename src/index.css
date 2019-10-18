@@ -12,3 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+select {
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
