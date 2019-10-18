@@ -1,5 +1,12 @@
 import { combineReducers } from 'redux'
 
+function svgSize(state = [800, 450], action) {
+  if (action.type === 'SIZE_LOADED') {
+    return action.value
+  }
+  return state
+}
+
 function flyover(state = {}, action) {
   if (action.type === 'FLYOVER_LOADED') {
     return action.value
@@ -66,7 +73,8 @@ const rootReducer = combineReducers({
   current,
   selectedProjection,
   allProjections,
-  cities
+  cities,
+  svgSize
 })
 
 export default rootReducer

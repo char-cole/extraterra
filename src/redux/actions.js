@@ -63,3 +63,10 @@ export function changeProjection(projection) {
     value: projection
   }
 }
+
+export function setSize(size) {
+  return {
+    type: 'SIZE_LOADED',
+    value: size
+  }
+}

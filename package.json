@@ -2,7 +2,7 @@
   "name": "things-in-space-new",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://char-cole.github.io/extraterra",
+  "homepage": "https://char-cole.github.io/superterram",
   "dependencies": {
     "@vx/geo": "0.0.192",
     "d3": "^5.12.0",

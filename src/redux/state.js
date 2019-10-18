@@ -1,6 +1,7 @@
 export default {
   current: {},
   worldData: [],
+  svgSize: [800, 450],
   selectedProjection: {
     geo: 'geoMercator',
     name: 'Mercator',
