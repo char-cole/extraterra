@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/superterram/precache-manifest.740ec46d9ce7e1aa939fc7db20cea477.js"
+  "/superterram/precache-manifest.9c54d2bd0009e55197d3c36bb043fc76.js"
 );
 
 self.addEventListener('message', (event) => {

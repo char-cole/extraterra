@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4af7a5b6ee7790b490f1859e2430492e",
+    "revision": "5e3ba27218276babb77ed0367b8d0add",
     "url": "/superterram/index.html"
   },
   {
-    "revision": "9807a1724d0931f86bd6",
-    "url": "/superterram/static/css/main.34de6062.chunk.css"
+    "revision": "7394003fa888b4ce4aaa",
+    "url": "/superterram/static/css/main.589b3206.chunk.css"
   },
   {
     "revision": "7ad95a054d2dc0b6656f",
     "url": "/superterram/static/js/2.fd9fa6cc.chunk.js"
   },
   {
-    "revision": "9807a1724d0931f86bd6",
-    "url": "/superterram/static/js/main.e0926e7a.chunk.js"
+    "revision": "7394003fa888b4ce4aaa",
+    "url": "/superterram/static/js/main.8b2ad5b2.chunk.js"
   },
   {
     "revision": "82bf6437a2bc0bb5e90f",
