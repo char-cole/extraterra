@@ -14,17 +14,34 @@ function App() {
         }}
       >
         <h1 style={{ fontSize: '1.2rem' }}>
-          Res Superterram - Things above the Earth
+          <i>Res Superterram</i> - Things above the Earth
         </h1>
         <div style={{ maxWidth: '15rem' }}>
-          <p>
+          <p style={{ fontSize: '.8rem' }}>
             <span role='img' aria-label='construction sign'>
               🚧
             </span>
-            <code>this app is being rebuilt!</code>
+            <code>app under construction!</code>
+            <span role='img' aria-label='construction sign'>
+              🚧
+            </span>
           </p>
           <p>
-            Use this map to track the International Space Station in real time!
+            This map displays the current location of the International Space
+            Station in real time, thanks to&nbsp;
+            <a
+              href='http://open-notify.org/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Open Notify
+            </a>
+            .
+          </p>
+          <p>
+            The location will update every 10 seconds and will draw a line
+            across the map. Try viewing different projections to see how the
+            path of the ISS appears to change.
           </p>
           <div
             style={{

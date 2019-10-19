@@ -56,25 +56,33 @@ function selectedProjection(state = {}, action) {
   return state
 }
 
-function allProjections(state = [], action) {
+function allProjections(state = []) {
   return state
 }
 
-function cities(state = [], action) {
+function cities(state = []) {
+  return state
+}
+
+function pastLocations(state = [], action) {
+  if (action.type === 'CURRENT_LOADED') {
+    state.push(action.value.longLat)
+  }
   return state
 }
 
 const rootReducer = combineReducers({
+  allProjections,
+  buttons,
+  cities,
+  current,
   flyover,
   inputLat,
   inputLong,
-  buttons,
-  worldData,
-  current,
+  pastLocations,
   selectedProjection,
-  allProjections,
-  cities,
-  svgSize
+  svgSize,
+  worldData
 })
 
 export default rootReducer

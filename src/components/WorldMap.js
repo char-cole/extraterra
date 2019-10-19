@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { geoPath } from 'd3-geo'
 
 import StationPositionMarker from './StationPositionMarker'
+import PastLocationMarker from './PastLocationMarker'
 import { renderProjection } from '../helpers'
 
 import { getMap, loadCurrent, setSize } from '../redux/actions'
@@ -15,15 +16,16 @@ class WorldMap extends Component {
     this.props.setSize([this.width, this.height])
     this.props.getMap()
     this.props.loadCurrent()
+    setInterval(this.props.loadCurrent, 10000)
   }
 
   render() {
     const {
       current,
+      pastLocations,
       selectedProjection,
-      worldData,
-      loadCurrent,
-      svgSize
+      svgSize,
+      worldData
     } = this.props
 
     const currentProjection = () =>
@@ -35,7 +37,6 @@ class WorldMap extends Component {
       )
     return (
       <div
-        onClick={() => loadCurrent()}
         style={{
           width: '100%',
           height: '100%',
@@ -51,35 +52,21 @@ class WorldMap extends Component {
         >
           <g className='countries'>
             {worldData.map((d, i) => {
-              const remainder = x => {
+              const divisibleBy = x => {
                 return i % x === 0
               }
-              const red = 250
+              const red = () => 250
               const green = () => {
-                if (remainder(7)) {
-                  return 150
-                }
-                if (remainder(5)) {
-                  return 220
-                }
-                if (remainder(3)) {
-                  return 100 + i
-                }
+                if (divisibleBy(7)) return 150
+                if (divisibleBy(5)) return 220
+                if (divisibleBy(3)) return 100 + i
                 return 180 - i / 2
               }
               const blue = () => {
-                if (remainder(8)) {
-                  return 150
-                }
-                if (remainder(6)) {
-                  return 200
-                }
-                if (remainder(4)) {
-                  return i + i / 2
-                }
-                if (remainder(2)) {
-                  return 180 - i / 2
-                }
+                if (divisibleBy(8)) return 150
+                if (divisibleBy(6)) return 200
+                if (divisibleBy(4)) return i + i / 2
+                if (divisibleBy(2)) return 180 - i / 2
                 return 100 + i / 2
               }
 
@@ -88,7 +75,7 @@ class WorldMap extends Component {
                   key={`path_${i}`}
                   d={geoPath().projection(currentProjection())(d)}
                   className='country'
-                  fill={`rgb(${red}, ${green()}, ${blue()})`}
+                  fill={`rgb(${red()}, ${green()}, ${blue()})`}
                   stroke='#212121'
                   strokeWidth={0.5}
                 />
@@ -96,6 +83,15 @@ class WorldMap extends Component {
             })}
           </g>
           <g className='markers'>
+            {pastLocations.map((coords, i) => {
+              const last = i === pastLocations.length - 1
+              return (
+                <PastLocationMarker
+                  longLat={coords}
+                  stroke={last && '#212121'}
+                />
+              )
+            })}
             <StationPositionMarker />
           </g>
         </svg>
@@ -105,9 +101,16 @@ class WorldMap extends Component {
 }
 
 const mapStateToProps = state => {
-  const { current, selectedProjection, svgSize, worldData } = state
+  const {
+    current,
+    pastLocations,
+    selectedProjection,
+    svgSize,
+    worldData
+  } = state
   return {
     current,
+    pastLocations,
     selectedProjection,
     svgSize,
     worldData

@@ -1,5 +1,6 @@
 export default {
   current: {},
+  pastLocations: [],
   worldData: [],
   svgSize: [800, 450],
   selectedProjection: {
