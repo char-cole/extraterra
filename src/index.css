@@ -16,4 +16,10 @@ code {
 select {
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
+  background-color: rgba(250, 200, 200, 0.75);
+}
+
+p {
+  border-radius: 0.25rem;
+  padding: 0.2rem;
 }

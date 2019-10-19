@@ -26,12 +26,13 @@ class WorldMap extends Component {
       svgSize
     } = this.props
 
-    const currentProjection = renderProjection(
-      selectedProjection.geo,
-      current.longLat,
-      svgSize[0],
-      svgSize[1]
-    )
+    const currentProjection = () =>
+      renderProjection(
+        selectedProjection.geo,
+        current.longLat,
+        svgSize[0],
+        svgSize[1]
+      )
     return (
       <div
         onClick={() => loadCurrent()}
@@ -85,7 +86,7 @@ class WorldMap extends Component {
               return (
                 <path
                   key={`path_${i}`}
-                  d={geoPath().projection(currentProjection)(d)}
+                  d={geoPath().projection(currentProjection())(d)}
                   className='country'
                   fill={`rgb(${red}, ${green()}, ${blue()})`}
                   stroke='#212121'
