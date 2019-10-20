@@ -2,21 +2,24 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { geoPath } from 'd3-geo'
 
-import StationPositionMarker from './StationPositionMarker'
-import PastLocationMarker from './PastLocationMarker'
+import StationPositionMarker from './Marker/StationPositionMarker'
+import PastLocationMarker from './Marker/PastLocationMarker'
 import { renderProjection } from '../helpers'
 
 import { getMap, loadCurrent, setSize } from '../redux/actions'
 
 class WorldMap extends Component {
   height = window.innerHeight * 0.8
-  width = this.height * 1.78
+  calcWidth = this.height * 1.78
+  // maxInnerWidth = window.innerWidth * .95
+  // width = this.calcWidth < this.maxInnerWidth ? this.calcWidth : this.maxInnerWidth
+  width = this.calcWidth
 
   componentDidMount() {
     this.props.setSize([this.width, this.height])
     this.props.getMap()
     this.props.loadCurrent()
-    setInterval(this.props.loadCurrent, 10000)
+    setInterval(this.props.loadCurrent, 3000)
   }
 
   render() {
@@ -29,12 +32,10 @@ class WorldMap extends Component {
     } = this.props
 
     const currentProjection = () =>
-      renderProjection(
-        selectedProjection.geo,
-        current.longLat,
-        svgSize[0],
-        svgSize[1]
-      )
+      renderProjection(selectedProjection.geo, current.longLat, {
+        width: svgSize[0],
+        height: svgSize[1]
+      })
     return (
       <div
         style={{
@@ -83,16 +84,19 @@ class WorldMap extends Component {
             })}
           </g>
           <g className='markers'>
-            {pastLocations.map((coords, i) => {
-              const last = i === pastLocations.length - 1
+            {pastLocations.map((longLat, i) => {
               return (
                 <PastLocationMarker
-                  longLat={coords}
-                  stroke={last && '#212121'}
+                  key={i}
+                  i={i}
+                  longLat={longLat}
+                  connectedSettings={{ current, selectedProjection, svgSize }}
                 />
               )
             })}
-            <StationPositionMarker />
+            <StationPositionMarker
+              connectedSettings={{ current, selectedProjection, svgSize }}
+            />
           </g>
         </svg>
       </div>

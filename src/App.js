@@ -1,6 +1,6 @@
 import React from 'react'
 import WorldMap from './components/WorldMap'
-import ChangeProjectionButtons from './components/ChangeProjectionButtons'
+import ProjectionSelector from './components/ProjectionSelector'
 
 function App() {
   return (
@@ -17,11 +17,21 @@ function App() {
           <i>Res Superterram</i> - Things above the Earth
         </h1>
         <div style={{ maxWidth: '15rem' }}>
-          <p style={{ fontSize: '.8rem' }}>
+          <p
+            style={{
+              fontSize: '.8rem',
+              borderRadius: '.25rem',
+              border: '1px solid #f7322e',
+              backgroundColor: 'rgba(247, 50, 46, .25',
+              padding: '.25rem',
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
             <span role='img' aria-label='construction sign'>
               🚧
             </span>
-            <code>app under construction!</code>
+            <code>&nbsp;app under construction!&nbsp;</code>
             <span role='img' aria-label='construction sign'>
               🚧
             </span>
@@ -49,7 +59,7 @@ function App() {
               flexDirection: 'column'
             }}
           >
-            <ChangeProjectionButtons />
+            <ProjectionSelector />
           </div>
         </div>
       </div>

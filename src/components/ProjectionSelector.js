@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { changeProjection } from '../redux/actions'
 
-const ChangeProjectionButtons = props => {
+const ProjectionSelector = props => {
   const buttonDivs = props.allProjections.map((x, i) => {
     return (
       <option key={i} value={x.geo + ',' + x.name}>
@@ -39,4 +39,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChangeProjectionButtons)
+)(ProjectionSelector)

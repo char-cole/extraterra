@@ -7,18 +7,22 @@ import {
 } from 'd3-geo'
 import { geoHill } from 'd3-geo-projection'
 
-export const renderProjection = (projection, longLat, width, height) => {
+export const renderProjection = (
+  projection,
+  longLat,
+  { width, height },
+  currentLocationCoords
+) => {
   switch (projection) {
     case 'geoOrthographic': {
       const findRotationCoords = x => {
-        if (x) {
-          if (x < -45) return [90, 0]
-          if (x > 45 && x < 135) return [-90, 0]
-          if (x >= 135) return [-180, 0]
-        }
-        return [0, 0]
+        return [x * -1 || 0]
       }
-      const long = longLat ? longLat[0] : 0
+      const long = currentLocationCoords
+        ? currentLocationCoords[0]
+        : longLat
+        ? longLat[0]
+        : 0
       return geoOrthographic()
         .scale(200)
         .translate([width / 2, height / 2])

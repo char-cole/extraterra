@@ -66,7 +66,7 @@ function cities(state = []) {
 
 function pastLocations(state = [], action) {
   if (action.type === 'CURRENT_LOADED') {
-    state.push(action.value.longLat)
+    state.unshift(action.value.longLat)
   }
   return state
 }
