@@ -49,9 +49,9 @@ function App() {
             .
           </p>
           <p>
-            The location will update every 10 seconds and will draw a line
-            across the map. Try viewing different projections to see how the
-            path of the ISS appears to change.
+            The location is updated every 5 seconds. Watch long enough and
+            you'll see the orbital path of the ISS drawn across the map! Try
+            viewing different projections to see how the path appears to change.
           </p>
           <div
             style={{

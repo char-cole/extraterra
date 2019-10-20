@@ -19,7 +19,7 @@ class WorldMap extends Component {
     this.props.setSize([this.width, this.height])
     this.props.getMap()
     this.props.loadCurrent()
-    setInterval(this.props.loadCurrent, 3000)
+    setInterval(this.props.loadCurrent, 5000)
   }
 
   render() {
