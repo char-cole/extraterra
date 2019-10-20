@@ -58,16 +58,54 @@ class WorldMap extends Component {
               }
               const red = () => 250
               const green = () => {
-                if (divisibleBy(7)) return 150
-                if (divisibleBy(5)) return 220
-                if (divisibleBy(3)) return 100 + i
-                return 180 - i / 2
+                if (divisibleBy(2)) {
+                  if (divisibleBy(12)) {
+                    if (divisibleBy(9)) {
+                      if (divisibleBy(5)) {
+                        return 200
+                      }
+                      return 250
+                    }
+                    return 100
+                  }
+                  if (divisibleBy(10)) {
+                    return 255
+                  }
+                  if (divisibleBy(4)) {
+                    return 150 + i / 2
+                  }
+                  return 225 - i * 0.75
+                }
+                if (divisibleBy(5)) {
+                  return 170 + i / 3
+                }
+                if (divisibleBy(3)) {
+                  return i * 5
+                }
+                if (divisibleBy(7)) {
+                  return 70
+                }
+                return 150
               }
               const blue = () => {
-                if (divisibleBy(8)) return 150
-                if (divisibleBy(6)) return 200
-                if (divisibleBy(4)) return i + i / 2
-                if (divisibleBy(2)) return 180 - i / 2
+                if (divisibleBy(2)) {
+                  if (divisibleBy(3)) {
+                    return 200 - i / 2
+                  }
+                  if (divisibleBy(12)) {
+                    if (divisibleBy(9)) {
+                      return 100
+                    }
+                    return 50
+                  }
+                  if (divisibleBy(10)) {
+                    return 100
+                  }
+                  if (divisibleBy(4)) {
+                    return i + i / 2
+                  }
+                  return 30 + i
+                }
                 return 100 + i / 2
               }
 
