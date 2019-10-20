@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/superterram/static/css/main.50612547.chunk.css",
-    "main.js": "/superterram/static/js/main.29c2a572.chunk.js",
-    "main.js.map": "/superterram/static/js/main.29c2a572.chunk.js.map",
+    "main.css": "/superterram/static/css/main.7e56b4c7.chunk.css",
+    "main.js": "/superterram/static/js/main.06364eae.chunk.js",
+    "main.js.map": "/superterram/static/js/main.06364eae.chunk.js.map",
     "runtime-main.js": "/superterram/static/js/runtime-main.2f805850.js",
     "runtime-main.js.map": "/superterram/static/js/runtime-main.2f805850.js.map",
-    "static/js/2.f01462f1.chunk.js": "/superterram/static/js/2.f01462f1.chunk.js",
-    "static/js/2.f01462f1.chunk.js.map": "/superterram/static/js/2.f01462f1.chunk.js.map",
+    "static/js/2.6ca3e8aa.chunk.js": "/superterram/static/js/2.6ca3e8aa.chunk.js",
+    "static/js/2.6ca3e8aa.chunk.js.map": "/superterram/static/js/2.6ca3e8aa.chunk.js.map",
     "index.html": "/superterram/index.html",
-    "precache-manifest.01d15db8d20757728684db44773e84d2.js": "/superterram/precache-manifest.01d15db8d20757728684db44773e84d2.js",
+    "precache-manifest.8875bf931bc9b0a755ade369d78e6664.js": "/superterram/precache-manifest.8875bf931bc9b0a755ade369d78e6664.js",
     "service-worker.js": "/superterram/service-worker.js",
-    "static/css/main.50612547.chunk.css.map": "/superterram/static/css/main.50612547.chunk.css.map"
+    "static/css/main.7e56b4c7.chunk.css.map": "/superterram/static/css/main.7e56b4c7.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.2f805850.js",
-    "static/js/2.f01462f1.chunk.js",
-    "static/css/main.50612547.chunk.css",
-    "static/js/main.29c2a572.chunk.js"
+    "static/js/2.6ca3e8aa.chunk.js",
+    "static/css/main.7e56b4c7.chunk.css",
+    "static/js/main.06364eae.chunk.js"
   ]
 }
