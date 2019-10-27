@@ -1,4 +1,5 @@
 import { feature } from 'topojson-client'
+import fetchJsonp from 'fetch-jsonp'
 // import timeZoneConverter from 'time-zone-converter'
 // import timeZone from "time-zone"
 
@@ -29,10 +30,11 @@ function mapLoaded(data) {
 
 export function loadCurrent() {
   return function(dispatch) {
-    fetch('http://api.open-notify.org/iss-now.json')
+    fetchJsonp('http://api.open-notify.org/iss-now.json')
       .then(response => {
-        if (response.status !== 200) {
-          console.log(`There was a problem: ${response.status}`)
+        console.log('jsonp', response)
+        if (!response.ok) {
+          console.log('Response not OK.', response)
           return
         }
         response.json().then(res => {
