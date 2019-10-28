@@ -14,10 +14,10 @@ function App() {
         }}
       >
         <h1 style={{ fontSize: '1.2rem' }}>
-          <i>Res Superterram</i> - Things above the Earth
+          Things above the Earth: International&nbsp;Space&nbsp;Station
         </h1>
         <div style={{ maxWidth: '15rem' }}>
-          <p
+          {/* <p
             style={{
               fontSize: '.8rem',
               borderRadius: '.25rem',
@@ -35,7 +35,7 @@ function App() {
             <span role='img' aria-label='construction sign'>
               🚧
             </span>
-          </p>
+          </p> */}
           <p>
             This map displays the current location of the International Space
             Station in real time, thanks to&nbsp;
