@@ -4,14 +4,13 @@ import MapMarker from './MapMarker'
 const PastLocationMarker = props => {
   const { connectedSettings, i, longLat } = props
   const opacity = () => {
-    const fraction = i / 10
-    const final = fraction > 1 ? fraction : 1
-    console.log('opacity', i, 1 / final)
-    return 1 / final
+    if (i > 300) return 0.4
+    const calc = 1 - i / 500
+    return calc
   }
   const circle = {
     radius: 1,
-    fill: `rgba(200, 250, 250, ${opacity()})`
+    fill: `rgba(255, 255, 255, ${opacity()})`
   }
   return (
     <MapMarker

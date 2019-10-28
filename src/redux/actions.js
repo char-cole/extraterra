@@ -32,7 +32,6 @@ export function loadCurrent() {
   return function(dispatch) {
     fetchJsonp('http://api.open-notify.org/iss-now.json')
       .then(response => {
-        console.log('jsonp', response)
         if (!response.ok) {
           console.log('Response not OK.', response)
           return

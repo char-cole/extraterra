@@ -9,17 +9,42 @@ import { renderProjection } from '../helpers'
 import { getMap, loadCurrent, setSize } from '../redux/actions'
 
 class WorldMap extends Component {
-  height = window.innerHeight * 0.8
-  calcWidth = this.height * 1.78
-  // maxInnerWidth = window.innerWidth * .95
-  // width = this.calcWidth < this.maxInnerWidth ? this.calcWidth : this.maxInnerWidth
-  width = this.calcWidth
+  state = {
+    height: 800,
+    width: 450
+  }
+
+  getMapDimensions = () => {
+    const { innerWidth, innerHeight } = window
+    let height, width
+    if (innerWidth > innerHeight) {
+      height = innerHeight * 0.9
+      width = height * 1.78
+    } else {
+      width = innerWidth * 0.9
+      height = width / 1.78
+    }
+
+    this.setState(
+      {
+        height,
+        width
+      },
+      () => this.props.setSize([width, height])
+    )
+  }
 
   componentDidMount() {
-    this.props.setSize([this.width, this.height])
+    this.getMapDimensions()
+    window.addEventListener('resize', this.getMapDimensions)
+
     this.props.getMap()
     this.props.loadCurrent()
     setInterval(this.props.loadCurrent, 5000)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.getMapDimensions)
   }
 
   render() {
@@ -31,11 +56,13 @@ class WorldMap extends Component {
       worldData
     } = this.props
 
-    const currentProjection = () =>
-      renderProjection(selectedProjection.geo, current.longLat, {
+    const currentProjection = () => {
+      return renderProjection(selectedProjection.geo, current.longLat, {
         width: svgSize[0],
         height: svgSize[1]
       })
+    }
+
     return (
       <div
         style={{
