@@ -39,6 +39,7 @@ export function loadCurrent() {
         response.json().then(res => {
           const current = {
             loaded: true,
+            timestamp: res.timestamp,
             longLat: [
               parseFloat(res.iss_position.longitude),
               parseFloat(res.iss_position.latitude)

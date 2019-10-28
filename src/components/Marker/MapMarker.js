@@ -5,6 +5,7 @@ const MapMarker = props => {
   const {
     circleProps,
     currentLocation,
+    onMouseOver,
     position,
     selectedProjection,
     svgSize
@@ -27,6 +28,8 @@ const MapMarker = props => {
         fill={circleProps.fill}
         stroke={circleProps.stroke}
         className='marker'
+        onMouseEnter={onMouseOver}
+        onMouseLeave={onMouseOver}
       />
     )
   } else return null
