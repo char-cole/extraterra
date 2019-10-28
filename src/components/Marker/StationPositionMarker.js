@@ -51,11 +51,11 @@ class StationMarker extends Component {
               justifyContent: 'center'
             }}
           >
-            <p style={{ margin: '.5rem 0' }}>
+            <p style={{ margin: '0' }}>
               {current.loaded && current.longLat[0] + ', ' + current.longLat[1]}
             </p>
             <p
-              style={{ margin: '.5rem 0' }}
+              style={{ margin: '0' }}
             >{`${date.hours}:${date.minutes}:${date.seconds}`}</p>
           </div>
         }
