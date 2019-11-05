@@ -61,3 +61,21 @@ export const renderProjection = (
     }
   }
 }
+
+export const parseDate = timestamp => {
+  const dateRaw = new Date(timestamp * 1000)
+  return {
+    hours: dateRaw.getHours().toLocaleString('en-US', {
+      minimumIntegerDigits: 2,
+      useGrouping: false
+    }),
+    minutes: dateRaw.getMinutes().toLocaleString('en-US', {
+      minimumIntegerDigits: 2,
+      useGrouping: false
+    }),
+    seconds: dateRaw.getSeconds().toLocaleString('en-US', {
+      minimumIntegerDigits: 2,
+      useGrouping: false
+    })
+  }
+}

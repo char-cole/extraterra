@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { geoPath } from 'd3-geo'
 
-import StationPositionMarker from './Marker/StationPositionMarker'
-import PastLocationMarker from './Marker/PastLocationMarker'
+import LocationMarker from './Marker/LocationMarker'
 import { renderProjection } from '../helpers'
 
 import { getMap, loadCurrent, setSize } from '../redux/actions'
@@ -149,19 +148,16 @@ class WorldMap extends Component {
             })}
           </g>
           <g className='markers'>
-            {pastLocations.map((longLat, i) => {
+            {pastLocations.map((location, i) => {
               return (
-                <PastLocationMarker
+                <LocationMarker
                   key={i}
-                  i={i}
-                  longLat={longLat}
+                  index={i}
+                  location={location}
                   connectedSettings={{ current, selectedProjection, svgSize }}
                 />
               )
             })}
-            <StationPositionMarker
-              connectedSettings={{ current, selectedProjection, svgSize }}
-            />
           </g>
         </svg>
       </div>
