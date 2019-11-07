@@ -4,11 +4,16 @@ export default {
   worldData: [],
   svgSize: [800, 450],
   selectedProjection: {
-    geo: 'geoMercator',
-    name: 'Mercator',
+    geo: 'geoOrthographic',
+    name: 'Orthographic',
     desc: ''
   },
   allProjections: [
+    {
+      geo: 'geoOrthographic',
+      name: 'Orthographic',
+      desc: ''
+    },
     {
       geo: 'geoMercator',
       name: 'Mercator',
@@ -27,11 +32,6 @@ export default {
     {
       geo: 'geoAzimuthalEqualArea',
       name: 'Azimuthal',
-      desc: ''
-    },
-    {
-      geo: 'geoOrthographic',
-      name: 'Orthographic',
       desc: ''
     },
     {

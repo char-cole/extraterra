@@ -81,7 +81,6 @@ class WorldMap extends Component {
         >
           <g className='countries'>
             {sorted.map((d, i) => {
-              console.log('id', d.id, 'i', i)
               const divisibleBy = x => {
                 return i % x === 0
               }

@@ -28,8 +28,8 @@ class LocationMarker extends Component {
         }
       : {
           radius: 5,
-          fill: 'rgba(50, 250, 250, .3)',
-          stroke: '#212121'
+          fill: 'rgba(75, 250, 250, .5)',
+          stroke: '#fff'
         }
     const date = parseDate(location.timestamp)
 
