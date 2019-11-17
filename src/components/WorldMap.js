@@ -62,7 +62,9 @@ class WorldMap extends Component {
       })
     }
 
-    const sorted = worldData.sort((a, b) => Number(a.id) - Number(b.id))
+    const sortedWorldData = worldData.sort(
+      (a, b) => Number(a.id) - Number(b.id)
+    )
 
     return (
       <div
@@ -80,7 +82,7 @@ class WorldMap extends Component {
           viewBox={`0 0 ${svgSize[0]} ${svgSize[1]}`}
         >
           <g className='countries'>
-            {sorted.map((d, i) => {
+            {sortedWorldData.map((d, i) => {
               const divisibleBy = x => {
                 return i % x === 0
               }
