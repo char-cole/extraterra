@@ -31,7 +31,7 @@ class LocationMarker extends Component {
           fill: 'rgba(75, 250, 250, .5)',
           stroke: '#fff'
         }
-    const date = parseDate(location.timestamp)
+    const date = parseDate(location.timestamp * 1000)
 
     return (
       <Popover

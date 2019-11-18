@@ -62,20 +62,25 @@ export const renderProjection = (
   }
 }
 
+const enforceTwoDigits = num => {
+  return num.toLocaleString('en-US', {
+    minimumIntegerDigits: 2,
+    useGrouping: false
+  })
+}
+
 export const parseDate = timestamp => {
-  const dateRaw = new Date(timestamp * 1000)
+  const dateRaw = new Date(timestamp)
   return {
-    hours: dateRaw.getHours().toLocaleString('en-US', {
-      minimumIntegerDigits: 2,
-      useGrouping: false
-    }),
-    minutes: dateRaw.getMinutes().toLocaleString('en-US', {
-      minimumIntegerDigits: 2,
-      useGrouping: false
-    }),
-    seconds: dateRaw.getSeconds().toLocaleString('en-US', {
-      minimumIntegerDigits: 2,
-      useGrouping: false
-    })
+    hours: enforceTwoDigits(dateRaw.getHours()),
+    minutes: enforceTwoDigits(dateRaw.getMinutes()),
+    seconds: enforceTwoDigits(dateRaw.getSeconds())
   }
+}
+
+export const parseTime = timeInSeconds => {
+  const hr = Math.floor(timeInSeconds / 3600)
+  const min = Math.floor(timeInSeconds / 60 - hr * 60)
+  const s = Math.floor(timeInSeconds - hr * 3600 - min * 60)
+  return `${hr}:${enforceTwoDigits(min)}:${enforceTwoDigits(s)}`
 }
